@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECSTASY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/
+ css2?family=Baloo+Bhai+2&family=Dancing+Script&family=Indie+Flower&family=Poppins:ital,wght@0,200;0,300;1,100&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        padding:0;
+        margin:0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+        scroll-behavior: smooth;
+        list-style:none;
+        text-decoration: none;
+    }
+    :root{
+--main-color:#065b80;
+--text-color:#1e1c2a;
+--bg-color:rgb(255, 255, 255);
+--big-font:5rem;
+--h2-font:2.25rem;
+--p-font:0.9rem;
+    }
+    *::selection{
+        background: var(--main-color);
+        color:#fff;
+    }
+    body{
+        color:var(--text-color);
+        background:var(--bg-color) ;
+    }
+    header{
+        position: fixed;
+        top:0;
+        right:0;
+        width:100%;
+        z-index: 1000;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        padding:30px 170px;
+        background:rgb(205, 244, 255);
+    }
+    .logo{
+        color: var(--main-color);
+        font-weight: 600;
+        font-size: 3.4rem;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    }
+    .navbar{
+        display:flex; 
+    }
+    .navbar a{
+        color:var(--text-color);
+        font-size:1.1rem;
+        padding:10px 20px;
+        font-weight:500;
+    }
+    .navbar a:hover{
+        color:var(--main-color);
+        transition:.4s;
+    }
+    #menu-icon{
+        font-size:2rem;
+        cursor: pointer;
+        display:none;
+    }
+    section{
+        padding:70px 17%;
+    }
+    .home{
+        width:100%;
+        min-height:90vh;
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        grid-gap:1.5rem;
+        align-items: center;
+    }
+    .home-img img{
+        max-width: 100;
+        width:600px;
+        height:auto;
+    }
+    .home-text h1{
+        font-size: var(--big-font);
+        color:var(--main-color);
+    }
+    .home-text h2{
+        font-size: var(--h2-font);
+        margin:1rem 0 2rem;
+    }
+    .btn{
+        display: inline-block;
+        padding:10px 20px;
+        background: var(--main-color);
+        color:#fff;
+        border-radius:0.5rem;
+        font-size:1.1rem;
+    }
+    .btn:hover{
+        transform:scale(1.2) translateY(10px) ;
+        transition:.4s;
+    }
+    .about{
+        display:grid;
+        grid-template-columns:repeat(2,2fr) ;
+        grid-gap:1.5rem;
+        align-items: center;
+    }
+    .about-img img{
+        max-width:100%;
+        width: 480px;
+        height:auto;
+    }
+    .about-text span{
+        color:var(--main-color);
+        font-weight: 600;
+    }
+    .about-text h2{
+        font-size: var(--h2-font);
+    }
+    .heading{
+        text-align: center;
+    }
+    .heading span{
+        color:var(--main-color);
+        font-weight:600;
+        font-size:3.2rem
+    }
+    .heading h3{
+font-size:1.3rem;
+    }
+   .heading p{
+    font-size: 1.1rem;
+    }
+    
+    .menu-container{
+        display:grid;
+        grid-template-columns: repeat(auto-fit,minmax(220px,auto));
+        grid-gap:1.5rem;
+        align-items: center;
+    }
+.box{
+    position: relative;
+    margin-top: 4rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:white;
+    padding:20px;
+    border-radius: 0.5rem;
+}
+.box-img{
+    width:220px;
+    height:220px;
+
+}
+.box-img img{
+    width:100%;
+    height:100%;
+}
+.box h2{
+    font-size: 1.3rem;
+    color:var(--text-color);
+}
+.box h3{
+color:var(--text-color);
+font-size: 1rem;
+font-weight: 400;
+margin:4px 0 10px;
+}
+.box span{
+    font-size: var(--p-font);
+    color: var(--main-color);
+    font-weight: 600;
+}
+.box .bx{
+    background: var(--main-color);
+    position: absolute;
+    right: 0;
+    top:0;
+    font-size: 20px;
+    padding: 7px 10px;
+    border-radius: 0 0.5rem 0 0.5rem;
+}
+.service span{
+    font-size: 4.5rem;
+    color: var(--main-color);
+    font-weight: 600;
+}
+.service-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,auto));
+    grid-gap:1.5rem;
+    margin-top: 4rem;
+}
+.s-box{
+    text-align: center;
+    padding: 20px 30px;
+}
+.s-box img{
+    width:80px;
+}
+.s-box h3{
+    margin:4px 0 10px;
+    color: var(--main-color);
+    font-size: 1.2rem;
+}
+.s-box p{
+    line-height: 1.7;
+}
+.cta{
+    background:white;
+    padding:70px 0;
+    text-align: center;
+    width:66%;
+    margin:100px auto;
+    border-radius:10px;
+}
+
+.cta h2{
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+.ch{
+    background: #2b0265;
+    padding:50px 0;
+    text-align: center;
+    width:76%;
+    margin:130px auto;
+    border-radius:10px;
+}
+.ch h3{
+    text-align: center;
+    font-size: 2.8rem;
+    color:white;
+    margin-bottom: 30px;
+}
+.bt{
+        display: inline-block;
+        padding:20px 20px;
+        background:rgb(208, 208, 208);
+        color:black;
+        border-radius:0.5rem;
+    }
+    .bt:hover{
+        transform:scale(1.2) translateY(10px) ;
+        transition:.4s;
+    }
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer{
+    padding:10px 0;
+}
+.col{
+    width:25%;
+}
+.col h4{
+    font-size: 1.2rem;
+    color:var(--text-color);
+    margin-bottom: 25px;
+    position: relative;
+}
+.col h4::bottom{
+    content:"";
+    position: absolute;
+    height:2px;
+    width:50px;
+    left:0;
+    bottom:-8px;
+    background:var(--main-color);
+}
+.col ul li:not(last-child){
+    margin-bottom:15px;
+}
+.col ul li a{
+    color:#4d4a54;
+    font-size: 1.1rem;
+    display: block;
+    text-transform: capitalize;
+    transition: .4s;
+}
+.col ul li a:hover{
+    color:var(--text-color);
+    transform: translateX(-12px);
+}
+
+       zx
+
+</style>
+<body>
+    <header> 
+        <a href="#" class="logo">NIRVANA</a>
+        <div class="bx bx-menu"id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <!------home start------>
+    <section class="home" id="home">
+        <div class="home-text">
+<h1>DEPRESSED?</h1>
+<h2>Choose Help<br>Not Suffering</h2>
+<a href="#" class="btn">Get Started</a>
+        </div>
+        <div class="home-img">
+<img src="woman-with-headache.jpg">
+        </div>
+    </section>
+    <!---------about start----->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="Download free vector of Mental health awareness icon vector by Sasi about psychology, mental health, brain, psychiatrist, and stress 519428.jpeg">
+        </div>
+<div class="about-text">
+    <h2>Talk.Resolve.Heal<br><br></h2>
+<a href="#" class="btn">Today's Sessions</a>
+</div>
+    </section>
+    <!--------menu start------->
+    <section class="menu" id="menu">
+        <div class="heading">
+            
+            <a href="#" class="btn">View All Counselors</a>
+        </div>
+        <div class="menu-container">
+            <div class="box">
+                <div class="box-img">
+                    <img src="ppl1.jpeg">
+                </div>
+                <h2>Puneet Mathur</h2>
+                <h3>Senior Consultant & Head-Department of<br>Mental Health & Behavioural Sciences</h3>
+               
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="ppl2.jpeg">
+                </div>
+                <h2>Zoha Merchant</h2>
+                <h3>M.Phil in Psychology</h3>
+                
+            </div>
+        </div>
+    </section>
+    <!-------service start------>
+    <section class="services" id="services">
+<div class="heading">
+   <span>Services</span>
+    <h3>Counselling Therapy Sessions With Licensed And Verified Experts</h3>
+    <p><br><br><br>English And All Regional Indian Languages <br><br>100% Private & Secure Platform <br><br> 24/7 Support </p>
+</div>
+<div class="service-container">
+    <div class="s-box">
+        <img src="vc.png">
+        <h3>Video Session</h3>
+        
+    </div>
+    <div class="s-box">
+        <img src="audio1.png">
+        <h3>Audio Session</h3>
+    </div>
+    <div class="s-box">
+        <img src="speech-bubble.png">
+        <h3>Chat Session</h3>
+    </div>
+</div>
+    </section>
+
+    <!----------service start--------->
+    <section class="cta">
+        <h2>Specialized Help For Your Mental Health</h2>
+       <a href="#" class="bt">Anxiety & Stress </a>
+        <a href="#" class="bt">OCD</a><br><br>
+        <a href="#" class="bt">Depression</a>
+        <a href="#" class="bt">Relationship Issues</a>
+        <a href="#" class="bt">Grief & loss</a><br><br>
+        <a href="#" class="bt">Trauma</a>
+        <a href="#" class="bt">Couple Therapy</a>
+        <a href="#" class="bt">Bipolar Disorder</a><br><br>
+        <a href="#" class="btn">Let's Talk</a>
+    </section>
+    <section class="ch">
+        <h3>Need More Details? See How Nirvana Works</h3>
+        <a href="#" class="btn">Click Here</a>
+    </section>
+
+    <!---------footer start------->
+    <section id="contact">
+        <div class="footer">
+            <div class="main">
+                <div class="col">
+                    <h4>Menu Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Menu</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Product Management</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
